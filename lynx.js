@@ -29,11 +29,15 @@ app.get('/api/example', function(req, res) {
 });
 
 app.post('/api/image', function(req, res) {
-	var command = req.body;
+	var cmd = req.body;
 
 	setTimeout(function() {
 		res.status = 200;
-		res.send(command.file);
+		res.send({
+			command : cmd.command,
+			status : "success",
+			file : cmd.file
+		});
 	}, 1500);
 });
 
