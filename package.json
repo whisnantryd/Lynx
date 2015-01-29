@@ -1,0 +1,14 @@
+{
+  "author": "Nathan McCann",
+  "name": "LynxExmapleApi",
+  "description": "Example api for FinishLynx line cameras",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whisnantryd/lynx.git"
+  },
+  "dependencies": {
+    "express": "^4.10.4",
+    "body-parser" : "latest"
+  }
+}
