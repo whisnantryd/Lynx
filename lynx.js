@@ -31,11 +31,8 @@ app.get('/api/example', function(req, res) {
 app.post('/api/image', function(req, res) {
 	var command = req.body;
 
-	console.log(JSON.stringify(command));
-
-	res.status = 200;
-
 	setTimeout(function() {
+		res.status = 200;
 		res.send(command.file);
 	}, 1500);
 });
