@@ -42,5 +42,7 @@ app.post('/api/image', function(req, res) {
 });
 
 app.listen(8080, function(err) {
-	console.log((err ? 'failed' : 'listening'));
+	if(err) {
+		console.log("Failed: " + err.toString());
+	}
 });
