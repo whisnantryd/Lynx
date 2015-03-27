@@ -29,16 +29,27 @@ app.get('/api/example', function(req, res) {
 });
 
 app.post('/api/image', function(req, res) {
-	var cmd = req.body;
+	if(req.body) {
+		// get the command object from the request
+		var cmd = req.body;
 
-	setTimeout(function() {
-		res.status = 200;
-		res.send({
-			command : cmd.command,
-			status : "success",
-			file : cmd.file
-		});
-	}, 1500);
+		// simulate the time it would take to
+		// generate and save the image
+		setTimeout(function() {
+			res.status = 200;
+
+			// respond with a command status object
+			res.send({
+				command : cmd.command,
+				status : "success",
+				file : cmd.file
+			});
+		}, 1500);
+
+	} else {
+		// missing command object
+		// send error to client
+	}
 });
 
 app.listen(8080, function(err) {
